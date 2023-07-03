@@ -1,0 +1,49 @@
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& A) {
+        
+     int n= A.size();
+     int m= A[0].size();
+     
+
+     for(int i=0; i<n; i++){
+         for(int j=0; j<m; j++){
+             if(A[i][j]==0){
+                 for(int k=0; k<m; k++){
+                     if(A[i][k]!=0){
+                         A[i][k]= -9999;
+                     }
+                 }
+             }
+
+            
+         }
+     }
+
+     for(int i=0; i<n; i++){
+         for(int j=0; j<m; j++){
+             if(A[i][j]==0){
+                 for(int k=0; k<n; k++){
+                     if(A[k][j]!=0){
+                         A[k][j]= -9999;
+                     }
+                 }
+             }
+
+            
+             }
+         }
+     
+
+     for(int i=0; i<n; i++ ){
+         for(int j=0; j<m; j++){
+             if(A[i][j]==-9999){
+                 A[i][j]=0;
+             }
+         }
+     }
+
+
+
+    }
+};
